@@ -130,6 +130,23 @@ initImageAnimations();
     ], 'footer');
     if (footerHtml) footerMount.innerHTML = footerHtml;
   }
+  // Normalize navigation links to absolute project-root paths so they don't become nested like /Service/Packages
+  (function rewriteNavLinks(){
+    const base = (location.hostname.endsWith('github.io') && projectBase) ? (projectBase + '/') : '/';
+    const routes = {
+      home: '',
+      about: 'About/',
+      service: 'Service/',
+      packages: 'Packages/',
+      payment: 'Payment/',
+      contact: 'Contact/',
+      register: 'Register/'
+    };
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const key = a.getAttribute('data-nav');
+      if (key && key in routes) a.setAttribute('href', base + routes[key]);
+    });
+  })();
   // If we are on a subpage (e.g., /gajaghanta-onlinebd/About/ or /.../Register/index.html),
   // fix asset paths inside injected partials by modifying the original attribute values,
   // NOT the resolved absolute URLs (important for GitHub Pages).
