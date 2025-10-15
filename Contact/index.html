@@ -5,16 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>যোগাযোগ — গজঘন্টা অনলাইন</title>
   <link rel="shortcut icon" type="image/png" href="../assets/img/logo/logo.png">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- CSS includes -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/animate.css" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/custom-animation.css">
+  <link rel="stylesheet" href="../assets/css/flaticon_broadx.css">
+  <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
+  <link rel="stylesheet" href="../assets/css/fa-local.css">
+  <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/slick.css">
+  <link rel="stylesheet" href="../assets/css/spacing.css">
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+  <!-- Resource hints -->
+  <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Scoped fixes for Contact page */
+    .tp-contact-3-item{min-height:180px}
+    .tp-contact-3-icon{display:flex;align-items:center;justify-content:center;width:68px;height:68px;margin:0 auto 14px;border-radius:999px;background:#fff;border:1px solid var(--border);box-shadow:var(--shadow)}
+    .tp-contact-3-icon i{font-size:28px;color:var(--brand-600)}
+    .tp-map__item iframe{width:100% !important;height:400px}
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
-  <main class="section">
-    <div class="container">
-      <h1 class="section-title">যোগাযোগ</h1>
-      <p class="section-sub">যেকোনো সময় কল বা মেসেজ করুন — আমরা আপনার পাশে।</p>
-    </div>
-  </main>
+
+   <main>
+
+    
+
+      <!-- contact area start -->
+      <div class="tp-contact-3-area pt-120 pb-90">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".3s">
+                  <div class="tp-contact-3-item text-center">
+                     <div class="tp-contact-3-icon">
+                        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span>
+                     </div>
+                     <div class="tp-contact-3-text">
+                        <h5 class="tp-contact-3-title">আমাদের ঠিকানা</h5>
+                        <a href="contact">গজঘণ্টা বাজার, গজঘণ্টা-৫৪১০, গংগাচড়া, রংপুর</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
+                  <div class="tp-contact-3-item text-center">
+                     <div class="tp-contact-3-icon">
+                        <span><i class="fa-solid fa-envelope" aria-hidden="true"></i></span>
+                     </div>
+                     <div class="tp-contact-3-text">
+                        <h5 class="tp-contact-3-title">যোগাযোগ করুন</h5>
+                        <a href="mailto:gajaghantaonline@gmail.com">gajaghantaonline@gmail.com</a> <br>
+                        <a href="tel:+8801988084009">+৮৮০ ১৯৮৮ ০৮৪০০৯</a><br>
+                        <a href="tel:+8809638268644">+৮৮০ ৯৬৩৮ ২৬৮৬৪৪</a>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-xl-4 col-lg-4 col-md-6 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".7s">
+                  <div class="tp-contact-3-item text-center">
+                     <div class="tp-contact-3-icon">
+                        <span><i class="fa-regular fa-clock" aria-hidden="true"></i></span>
+                     </div>
+                     <div class="tp-contact-3-text">
+                        <h5 class="tp-contact-3-title">অফিস সময়</h5>
+                        <a href="contact">সপ্তাহে ৬ দিন সকাল ৯:০০ - রাত ৯:০০ <br>
+                           শুক্রবার বন্ধ</a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- contact area end -->
+      <div id="emailnow">
+         <h1 class="text-center">যোগাযোগ করুন বিস্তারিত</h1>
+      </div>
+      <!-- form area start -->
+      <div class="tp-contact-form-area pb-130">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-12">
+                  <div class="tp-contact-form-border">
+                     <h4 class="tp-contact-form-title">আপনার বার্তা প্রেরণ করুন</h4>
+                     <form method="post" action="phpmailer.html">
+                        <div class="row">
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                              <div class="tp-contact-form-input-box">
+                                 <input type="text" placeholder="আপনার নাম লিখুন">
+                              </div>
+                           </div>
+                           <div class="col-xl-6 col-lg- col-md-6 col-12 mb-20">
+                              <div class="tp-contact-form-input-box">
+                                 <input type="text" placeholder="আপনার ইমেইল লিখুন">
+                              </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                              <div class="tp-contact-form-input-box">
+                                 <input type="text" placeholder="আপনার সাইট লিখুন">
+                              </div>
+                           </div>
+                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                              <div class="tp-contact-form-input-box">
+                                 <input type="text" placeholder="আপনার বিষয় লিখুন">
+                              </div>
+                           </div>
+                           <div class="col-12 mb-20">
+                              <div class="tp-contact-form-input-box">
+                                 <textarea placeholder="আপনার বার্তা লিখুন"></textarea>
+                              </div>
+                           </div>
+                        </div>
+                     </form>
+                     <button type="submit" class="tp-btn theme-bg"><span>মেসেজ করুন</span></button>
+                  </div>  
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- form area end -->
+
+      <!-- map area end -->
+      <div class="tp-map-area">
+         <div class="tp-map__item">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3591.0992860313386!2d89.27073857540279!3d25.833273477307014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e32f0038f3a92f%3A0xc353ee9cb5fb37ae!2sGajaghanta%20Online!5e0!3m2!1sen!2sbd!4v1760555036293!5m2!1sen!2sbd" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+         </div>
+      </div>
+      <!-- map area start -->
+
+
+   </main>
+
+
+
   <div id="site-footer"></div>
 
   <script>
@@ -29,5 +155,23 @@
     await load('site-footer', ['../assets/header/footer.html','assets/header/footer.html']);
   })();
   </script>
+  
+  <!-- JS includes -->
+  <script src="../assets/js/Script.js" defer></script>
+  <script data-cfasync="false" src="../assets/js/email-decode.min.js"></script>
+  <script src="../assets/js/vendor/jquery.js" defer></script>
+  <script src="../assets/js/bootstrap-bundle.js" defer></script>
+  <script src="../assets/js/imagesloaded-pkgd.js" defer></script>
+  <script src="../assets/js/isotope-pkgd.js" defer></script>
+  <script src="../assets/js/jarallax.js" defer></script>
+  <script src="../assets/js/magnific-popup.js" defer></script>
+  <script src="../assets/js/slick.js" defer></script>
+  <script src="../assets/js/nice-select.js" defer></script>
+  <script src="../assets/js/vendor/waypoints.js" defer></script>
+  <script src="../assets/js/wow.js" defer></script>
+  <script src="../assets/js/range-slider.js" defer></script>
+  <script src="../assets/js/purecounter.js" defer></script>
+  <script src="../assets/js/swiper-bundle.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>

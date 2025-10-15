@@ -70,7 +70,6 @@ initImageAnimations();
 
 // Partials loader (head, header, footer)
 (async () => {
-  const headMount = document.getElementById('site-head');
   const headerMount = document.getElementById('site-header');
   const footerMount = document.getElementById('site-footer');
 
@@ -89,16 +88,24 @@ initImageAnimations();
     return null;
   };
 
-  if (headMount) {
-    const headHtml = await tryFetch([
-      'assets/header/head.html',
-      '../assets/header/head.html',
-      `${projectBase}/assets/header/head.html`,
-      'assets/headerFooter/head.html',
-      '../assets/headerFooter/head.html',
-      `${projectBase}/assets/headerFooter/head.html`
-    ], 'head');
-    if (headHtml) headMount.innerHTML = headHtml;
+  // Inject head partial into the real <head> ONLY if core CSS is not already present
+  {
+    const hasCoreCss = !!document.querySelector('link[href*="assets/css/style.css"],link[href*="../assets/css/style.css"]');
+    if (!hasCoreCss) {
+      const headHtml = await tryFetch([
+        'assets/header/head.html',
+        '../assets/header/head.html',
+        `${projectBase}/assets/header/head.html`,
+        'assets/headerFooter/head.html',
+        '../assets/headerFooter/head.html',
+        `${projectBase}/assets/headerFooter/head.html`
+      ], 'head');
+      if (headHtml) {
+        const wrap = document.createElement('div');
+        wrap.innerHTML = headHtml;
+        Array.from(wrap.children).forEach(node => document.head.appendChild(node));
+      }
+    }
   }
 
   if (headerMount) {

@@ -5,17 +5,189 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>সম্পর্কে — গজঘন্টা অনলাইন</title>
   <link rel="shortcut icon" type="image/png" href="../assets/img/logo/logo.png">
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <!-- CSS includes -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
+  <link rel="stylesheet" href="../assets/css/animate.css" />
+  <link rel="stylesheet" href="../assets/css/bootstrap.css" />
+  <link rel="stylesheet" href="../assets/css/custom-animation.css">
+  <link rel="stylesheet" href="../assets/css/flaticon_broadx.css">
+  <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
+  <link rel="stylesheet" href="../assets/css/fa-local.css">
+  <link rel="stylesheet" href="../assets/css/magnific-popup.css">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="stylesheet" href="../assets/css/slick.css">
+  <link rel="stylesheet" href="../assets/css/spacing.css">
+  <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
+  <!-- Resource hints -->
+  <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
+  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    /* Scoped marquee styles for About page text slider */
+    .tp-slider-text-area .marquee { overflow: hidden; white-space: nowrap; }
+    .tp-slider-text-area .marquee-track { display: inline-flex; gap: 2.5rem; will-change: auto; animation: none !important; transform: none !important; }
+    .tp-slider-text-area .marquee:hover .marquee-track { animation-play-state: paused; }
+    /* Keyframes kept for possible future use, but disabled above */
+    @keyframes marquee-right { 0% { transform: translateX(-100%); } 100% { transform: translateX(0); } }
+    /* Make the text strip left-aligned and responsive */
+    .tp-slider-text-area .tp-slider-text-box{ text-align:left; }
+    .tp-slider-text-area .tp-slider-text-box span{ display:inline-block; font-weight:800; font-size:clamp(20px,6vw,48px); line-height:1.1; }
+    .tp-slider-text-area .tp-slider-text-box b{ color:var(--brand-600); }
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
 
-  <main class="section">
-    <div class="container">
-      <h1 class="section-title">সম্পর্কে</h1>
-      <p class="section-sub">আমাদের মিশন হল আপনার বাড়ি ও ব্যবসার জন্য নির্ভরযোগ্য, দ্রুতগতির ফাইবার ইন্টারনেট সেবা পৌঁছে দেওয়া।</p>
-    </div>
-  </main>
+   <main>
+
+    
+
+      <!-- about area start -->
+      <div class="tp-about-2-area  tp-feature-2-bg p-relative grey-bg pb-120 fix"
+         data-background="../assets/img/about/bg-3-1.jpg">
+         <div class="tp-about-2-thumb ">
+            <img src="../assets/img/about/about-2-1.jpg" alt="">
+         </div>
+        <div class="tp-about-2-shape-1 d-none d-lg-block">
+            <img src="../assets/img/about/shape-2-1.png" alt="">
+         </div>
+         <div class="container">
+            <div class="row">
+               <div class="offset-xxl-5 offset-xl-6 offset-lg-6 col-xxl-7 col-xl-6 col-lg-6  wow tpfadeRight"
+                  data-wow-duration=".9s" data-wow-delay=".7s">
+                  <div class="tp-about-2-right">
+                     <div class="tp-about-2-section-box mb-25">
+                        <span class="tp-section-subtitle">গজঘন্টা অনলাইন — ইন্টারনেট ও ব্রডব্যান্ড</span>
+                        <h4 class="tp-section-title">যে কোনো ডিভাইসে সব ধরনের কন্টেন্ট —
+                           মাত্র ৳৫২৫/মাস</h4>
+                     </div>
+                     <div class="tp-about-2-text mb-45">
+                        <p>আমরা উচ্চগতির ইন্টারনেট ও রিয়েল আইপি প্রদান করি যা আপনার ব্যক্তিগত বা অফিস কম্পিউটারে শেয়ার্ড নয়। ফলে নেটফ্লিক্সসহ স্ট্রিমিং ও অন্যান্য বিনোদনমূলক অ্যাপ্লিকেশনের জন্য এটি আদর্শ।</p>
+                     </div>
+                     <div class="tp-subscribe-rate d-flex align-items-center">
+                        <a class="tp-btn theme-bg mr-60" href="../Packages/"><span>আরও জানুন</span></a>
+                        <span>৳৫২৫<i>/মাস</i></span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- about area end -->
+
+      <!-- feature area start -->
+      <div class="tp-feature-3-area p-relative fix pt-120 mb-100">
+         <div class="tp-feature-3-shape-1 d-none d-xxl-block">
+            <img src="../assets/img/service/shape-3-2.png" alt="">
+         </div>
+         <div class="tp-feature-3-thumb-box">
+            <div class="tp-feature-3-shape-2 d-none d-xxl-block">
+               <img src="../assets/img/service/shape-3-1.png" alt="">
+            </div>
+            <div class="tp-feature-3-shape-3 d-none d-xxl-block">
+               <img src="../assets/img/service/shape-3-3.png" alt="">
+            </div>
+            
+            <div class="tp-feature-3-funfact-wrap d-none d-lg-flex align-items-center">
+               <ul>
+                  <li>
+                     <div class="tp-feature-3-funfact d-flex align-items-center">
+                        <i class="purecounter" data-purecounter-duration="1" data-purecounter-end="7">0</i>
+                        <span>বছরের <br>অভিজ্ঞতা</span>
+                     </div>
+                  </li>
+                  <li>
+                     <div class="tp-feature-3-funfact d-flex align-items-center">
+                        <i class="purecounter" data-purecounter-duration="1" data-purecounter-end="1500">0</i>
+                        <span>কাস্টমার <br>সংখ্যা</span>
+                     </div>
+                  </li>
+               </ul>
+            </div>
+            <div class="tp-feature-3-thumb">
+               <img src="../assets/img/service/bg-3-1.jpg" alt="">
+            </div>
+         </div>
+         <div class="container">
+            <div class="tp-feature-3-title-wrap">
+               <div class="row align-items-end">
+                  <div class="col-xl-7 col-lg-6">
+                     <div class="tp-feature-3-title-box">
+                        <span class="tp-section-subtitle">আমাদের সুবিধাগুলো দেখুন</span>
+                        <h4 class="tp-section-title">কেন বেছে নেবেন <br>গজঘন্টা অনলাইন সেবা</h4>
+                     </div>
+                  </div>
+                 
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-5 col-lg-5">
+                  <div class="tp-feature-3-item-box">
+                     <div class="tp-feature-3-item d-flex align-items-center">
+                        <div class="tp-feature-3-icon">
+                           <span><i class="fa-solid fa-satellite-dish"></i></span>
+                        </div>
+                        <div class="tp-feature-3-text">
+                           <h5 class="tp-feature-3-title">GO হটস্পট</h5>
+                      
+                        </div>
+                     </div>
+                     <div class="tp-feature-3-item d-flex align-items-center">
+                        <div class="tp-feature-3-icon">
+                           <span><i class="fa-solid fa-house-signal"></i></span>
+                        </div>
+                        <div class="tp-feature-3-text">
+                           <h5 class="tp-feature-3-title">গৃহ নিরাপত্তা</h5>
+                         
+                        </div>
+                     </div>
+                     <div class="tp-feature-3-item d-flex align-items-center">
+                        <div class="tp-feature-3-icon">
+                           <span><i class="fa-solid fa-headset"></i></span>
+                        </div>
+                        <div class="tp-feature-3-text">
+                           <h5 class="tp-feature-3-title">২৪/৭ সাপোর্ট</h5>
+                          
+                        </div>
+                     </div>
+                     <div class="tp-feature-3-item mb d-flex align-items-center">
+                        <div class="tp-feature-3-icon">
+                           <span><i class="fa-solid fa-tv"></i></span>
+                        </div>
+                        <div class="tp-feature-3-text">
+                           <h5 class="tp-feature-3-title">বিনামূল্যে ইনস্টলেশন</h5>
+                        
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- feature area end -->
+
+      <!-- text-slider area start -->
+      <div class="tp-slider-text-area fix pb-100">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-xl-12">
+                  <div class="tp-slider-text-box marquee">
+                     <div class="marquee-track" aria-hidden="true">
+                        <span>গজঘন্টা <b>অনলাইন</b> ব্রডব্যান্ড</span>
+                        <span>গজঘন্টা <b>অনলাইন</b> ব্রডব্যান্ড</span>
+                        <span>গজঘন্টা <b>অনলাইন</b> ব্রডব্যান্ড</span>
+                        <span>গজঘন্টা <b>অনলাইন</b> ব্রডব্যান্ড</span>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- text-slider area end -->
+
+
+
+   </main>
 
   <div id="site-footer"></div>
 
@@ -39,5 +211,23 @@
     ]);
   })();
   </script>
+  
+  <!-- JS includes -->
+  <script src="../assets/js/Script.js" defer></script>
+  <script data-cfasync="false" src="../assets/js/email-decode.min.js"></script>
+  <script src="../assets/js/vendor/jquery.js" defer></script>
+  <script src="../assets/js/bootstrap-bundle.js" defer></script>
+  <script src="../assets/js/imagesloaded-pkgd.js" defer></script>
+  <script src="../assets/js/isotope-pkgd.js" defer></script>
+  <script src="../assets/js/jarallax.js" defer></script>
+  <script src="../assets/js/magnific-popup.js" defer></script>
+  <script src="../assets/js/slick.js" defer></script>
+  <script src="../assets/js/nice-select.js" defer></script>
+  <script src="../assets/js/vendor/waypoints.js" defer></script>
+  <script src="../assets/js/wow.js" defer></script>
+  <script src="../assets/js/range-slider.js" defer></script>
+  <script src="../assets/js/purecounter.js" defer></script>
+  <script src="../assets/js/swiper-bundle.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
 </body>
 </html>
