@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>রেজিস্টার — গজঘন্টা অনলাইন</title>
+  <link rel="shortcut icon" type="image/png" href="../assets/img/logo/logo.png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+  <div id="site-header"></div>
+  <main class="section">
+    <div class="container">
+      <h1 class="section-title">রেজিস্টার</h1>
+      <p class="section-sub">সেবাটি নিতে আপনার তথ্য দিন — আমরা দ্রুত যোগাযোগ করব।</p>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+
+  <script>
+  (async () => {
+    const load = async (mountId, paths) => {
+      const el = document.getElementById(mountId);
+      if (!el) return;
+      for (const p of paths) { try { const r = await fetch(p); if (r.ok) { el.innerHTML = await r.text(); return; } } catch(_){} }
+      console.warn('[partials] Unable to load', mountId, 'from', paths);
+    };
+    await load('site-header', ['../assets/header/header.html','assets/header/header.html']);
+    await load('site-footer', ['../assets/header/footer.html','assets/header/footer.html']);
+  })();
+  </script>
+</body>
+</html>
