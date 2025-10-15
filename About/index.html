@@ -209,6 +209,29 @@
       '../assets/header/footer.html',
       'assets/header/footer.html'
     ]);
+
+    const computeBase = () => {
+      if (location.hostname.endsWith('github.io')) {
+        const seg = location.pathname.split('/').filter(Boolean)[0] || '';
+        return seg ? `/${seg}/` : '/';
+      }
+      return '/';
+    };
+    const base = computeBase();
+    const route = (key) => ({
+      home: '',
+      about: 'About/',
+      service: 'Service/',
+      packages: 'Packages/',
+      payment: 'Payment/',
+      contact: 'Contact/',
+      register: 'Register/'
+    })[key] ?? '';
+    document.querySelectorAll('[data-nav]').forEach(a => {
+      const key = a.getAttribute('data-nav');
+      const path = route(key);
+      if (path !== undefined) a.setAttribute('href', base + path);
+    });
   })();
   </script>
   
