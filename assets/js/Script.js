@@ -135,12 +135,12 @@ initImageAnimations();
     const base = (location.hostname.endsWith('github.io') && projectBase) ? (projectBase + '/') : '/';
     const routes = {
       home: '',
-      about: 'About/',
-      service: 'Service/',
-      packages: 'Packages/',
-      payment: 'Payment/',
-      contact: 'Contact/',
-      register: 'Register/'
+      about: 'About',
+      service: 'Service',
+      packages: 'Packages',
+      payment: 'Payment',
+      contact: 'Contact',
+      register: 'Register'
     };
     document.querySelectorAll('[data-nav]').forEach(a => {
       const key = a.getAttribute('data-nav');
