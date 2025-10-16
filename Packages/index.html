@@ -22,15 +22,156 @@
   <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .pricing{padding:40px 0}
+    .pricing-grid{display:grid;grid-template-columns:repeat(1,minmax(0,1fr));gap:20px}
+    @media(min-width:768px){.pricing-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(min-width:1200px){.pricing-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+    .pricing-card{background:#fff;border:1px solid var(--border);box-shadow:var(--shadow);border-radius:14px;padding:22px;display:flex;flex-direction:column}
+    .pricing-name{font-weight:800;font-size:20px;margin:0 0 6px;color:var(--text)}
+    .pricing-speed{color:var(--brand-600);font-weight:900;font-size:28px;margin:0 0 6px}
+    .pricing-price{font-size:22px;font-weight:800;margin:0 0 12px}
+    .pricing-features{list-style:none;padding:0;margin:0 0 16px;color:var(--text-2);font-size:14px}
+    .pricing-features li{display:flex;gap:8px;align-items:center;padding:6px 0;border-bottom:1px dashed var(--border)}
+    .pricing-cta{margin-top:auto;display:flex;gap:10px}
+    .btn.full{width:100%;text-align:center}
+    /* Center all text within each pricing card */
+    .tp-price-2-item{ text-align:center; width:100%; max-width:420px; margin-left:auto; margin-right:auto }
+    @media(min-width:768px){ .tp-price-2-item{ max-width:420px } }
+    @media(min-width:1200px){ .tp-price-2-item{ max-width:380px } }
+    @media(min-width:1400px){ .tp-price-2-item{ max-width:360px } }
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
-  <main class="section">
-    <div class="container">
-      <h1 class="section-title">প্যাকেজ</h1>
-      <p class="section-sub">আপনার ব্যবহারের ধরন অনুযায়ী প্যাকেজ বেছে নিন — গেমিং, স্ট্রিমিং, হোম বা বিজনেস।</p>
-    </div>
-  </main>
+
+
+   <main>
+
+    
+
+      <!-- price area start -->
+      <div class="tp-price-2-area pt-120 pb-80">
+         <div class="container">
+            <div class="row">
+               <div class="col-xl-6 col-lg-6 col-md-12 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".2s">
+                  <div class="tp-price-2-item">
+                     <div class="tp-price-2-shape">
+                        <img src="../assets/img/price/shape-2-1.png" alt="">
+                     </div>
+                     <div class="tp-price-2-top pb-10">
+                        <h5>১৫ এমবিপিএস</h5>
+                     </div>
+                     <h4 class="tp-price-2-rate pb-30">৳৫২৫</h4>
+                     <div class="tp-price-2-list pb-35">
+                        <ul>
+                           <li>১০০ এমবিপিএস বিডিআইএক্স</li>
+                           <li>৪কে ইউটিউব ও ফেসবুক</li>
+                           <li>অপটিক্যাল ফাইবার সংযোগ</li>
+                           <li>২৪/৭ অনলাইন সাপোর্ট</li>
+                        </ul>
+                     </div>
+                     <a class="tp-btn black-bg" href="../Register"><span>যোগাযোগ করুন</span></a>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-12 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".35s">
+                  <div class="tp-price-2-item active">
+                     <div class="tp-price-2-shape">
+                        <img src="../assets/img/price/shape-2-2.png" alt="">
+                     </div>
+                     <div class="tp-price-2-top pb-10">
+                        <h5>৩০ এমবিপিএস</h5>
+                     </div>
+                     <h4 class="tp-price-2-rate pb-30">৳৬০০</h4>
+                     <div class="tp-price-2-list pb-35">
+                        <ul>
+                           <li>১০০ এমবিপিএস বিডিআইএক্স</li>
+                           <li>৪কে ইউটিউব ও ফেসবুক</li>
+                           <li>অপটিক্যাল ফাইবার সংযোগ</li>
+                           <li>২৪/৭ অনলাইন সাপোর্ট</li>
+                        </ul>
+                     </div>
+                     <a class="tp-btn" href="../Register"><span>যোগাযোগ করুন</span></a>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-12 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".5s">
+                  <div class="tp-price-2-item">
+                     <div class="tp-price-2-shape">
+                        <img src="../assets/img/price/shape-2-1.png" alt="">
+                     </div>
+                     <div class="tp-price-2-top pb-10">
+                        <h5>৪৫ এমবিপিএস</h5>
+                     </div>
+                     <h4 class="tp-price-2-rate pb-30">৳৬৩০</h4>
+                     <div class="tp-price-2-list pb-35">
+                        <ul>
+                           <li>১০০ এমবিপিএস বিডিআইএক্স</li>
+                           <li>৪কে ইউটিউব ও ফেসবুক</li>
+                           <li>অপটিক্যাল ফাইবার সংযোগ</li>
+                           <li>২৪/৭ অনলাইন সাপোর্ট</li>
+                        </ul>
+                     </div>
+                     <a class="tp-btn black-bg" href="../Register"><span>যোগাযোগ করুন</span></a>
+                  </div>
+               </div>
+               <div class="col-xl-6 col-lg-6 col-md-12 mb-30 wow tpfadeUp" data-wow-duration=".9s" data-wow-delay=".65s">
+                  <div class="tp-price-2-item">
+                     <div class="tp-price-2-shape">
+                        <img src="../assets/img/price/shape-2-1.png" alt="">
+                     </div>
+                     <div class="tp-price-2-top pb-10">
+                        <h5>৫০ এমবিপিএস</h5>
+                     </div>
+                     <h4 class="tp-price-2-rate pb-30">৳৮৪০</h4>
+                     <div class="tp-price-2-list pb-35">
+                        <ul>
+                           <li>১০০ এমবিপিএস বিডিআইএক্স</li>
+                           <li>৪কে ইউটিউব ও ফেসবুক</li>
+                           <li>অপটিক্যাল ফাইবার সংযোগ</li>
+                           <li>২৪/৭ অনলাইন সাপোর্ট</li>
+                        </ul>
+                     </div>
+                     <a class="tp-btn black-bg" href="../Register"><span>যোগাযোগ করুন</span></a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- price area end -->
+
+    
+
+      <!-- newsletter area start -->
+      <div class="tp-newsletter-area tp-newsletter-overley grey-bg pt-120 pb-120"
+         data-background="assets/img/price/bg-1-1.jpg">
+         <div class="container">
+            <div class="row justify-content-center">
+               <div class="col-xl-9">
+                  <div class="tp-newsletter-content text-center z-index wow tpfadeUp" data-wow-duration=".9s"
+                     data-wow-delay=".3s">
+                     <div class="tp-newsletter-title-box">
+                        <span class="tp-section-subtitle">২৫% ছাড়</span>
+                        <h4 class="tp-section-title pb-10">আমাদের নিউজলেটারে সাবস্ক্রাইব করুন</h4>
+                     </div>
+                     <div class="tp-newsletter-text">
+                        <p class="mb-55">নতুন অফার ও আপডেট পেতে সাবস্ক্রাইব করুন।</p>
+                     </div>
+                     <div class="tp-newsletter-input-box d-flex justify-content-center">
+                        <input type="email" placeholder="আপনার ইমেইল">
+                        <button class="tp-btn black-bg" type="submit"><span>এখনই পাঠান</span></button>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- newsletter area end -->
+
+   </main>
+
+
+
+
   <div id="site-footer"></div>
 
   <script>

@@ -22,15 +22,64 @@
   <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .pay-card{max-width:840px;margin:0 auto;padding:24px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+    .pay-card h3{margin:0 0 8px}
+    .pay-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:20px;align-items:start}
+    @media(max-width:767px){.pay-grid{grid-template-columns:1fr}}
+    .qr-box{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff;text-align:center}
+    .qr-box img{width:100%;height:auto;display:block;max-width:320px;margin:0 auto}
+    .note{font-size:13px;color:var(--text-2)}
+    .inline-feedback{display:none;margin-left:8px;font-size:12px;color:var(--brand-600);font-weight:700}
+    .inline-feedback.show{display:inline}
+    .pull-up{margin:-60px 0 0 auto;align-self:flex-start}
+    @media(max-width:767px){.pull-up{margin:10px 0 0 0}}
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
+
+
   <main class="section">
     <div class="container">
       <h1 class="section-title">পেমেন্ট</h1>
-      <p class="section-sub">বিকাশ, নগদ বা ব্যাংক ট্রান্সফারের মাধ্যমে নিরাপদ পেমেন্ট করুন।</p>
+      <p class="section-sub">এই পেজে আপাতত শুধুমাত্র <strong>বিকাশ (bKash)</strong> পেমেন্ট নেওয়া হয়।</p>
+      <div class="card mt-6 pay-card">
+        <h3>বিকাশ (bKash) পেমেন্ট</h3>
+        <p class="mt-2 muted">Payment করুন নিম্নের নম্বরে:</p>
+        <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+          <code id="bkashNo" style="font-weight:800;font-size:18px;">01341519045</code>
+          <button id="copyBtn" class="btn" style="padding:6px 10px" aria-label="নম্বার কপি করুন">কপি করুন</button>
+          <span id="copyMsg" class="inline-feedback">কপি হয়েছে</span>
+        </div>
+        <div class="mt-4 pay-grid">
+          <div>
+            <h4 style="margin:0 0 6px">পেমেন্ট ধাপ (bKash App):</h4>
+            <ol style="margin:0;padding-left:18px;color:var(--text-2)">
+              <li>Payment → নম্বর দিন: <strong>01341519045</strong></li>
+              <li>Amount দিন (আপনার প্যাকেজের মাসিক বিল)</li>
+              <li>Reference এ আপনার CId/userid লিখুন</li>
+              <li>Confirm করে ট্রানজেকশন সম্পন্ন করুন</li>
+            </ol>
+            <p class="note mt-3">দয়া করে রেফারেন্সে আপনার গ্রাহক আইডি (CId/userid) সঠিকভাবে লিখবেন।</p>
+          </div>
+          <figure class="qr-box pull-up" style="margin:0">
+            <img src="../assets/img/payment/bkash.png" alt="bKash QR — স্ক্যান করে পেমেন্ট করুন" />
+            <figcaption style="text-align:center;font-size:12px;color:var(--text-2);margin-top:6px">
+              QR কোড স্ক্যান করুন
+              · <a href="../assets/img/payment/bkash.png" target="_blank" rel="noopener" class="note">বড় করে দেখুন</a>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="mt-3 muted">পেমেন্ট হয়ে গেলে ট্রানজেকশন আইডি দিয়ে আমাদের সাপোর্টে জানালে দ্রুত আপডেট করা হবে।</p>
+        <a href="https://wa.me/+8801988084009" class="btn primary mt-3">সাপোর্টে জানান</a>
+      </div>
     </div>
   </main>
+
+
+
+
   <div id="site-footer"></div>
 
   <script>
@@ -63,5 +112,23 @@
   <script src="../assets/js/purecounter.js" defer></script>
   <script src="../assets/js/swiper-bundle.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      var copyBtn = document.getElementById('copyBtn');
+      var bkashNo = document.getElementById('bkashNo');
+      var copyMsg = document.getElementById('copyMsg');
+      if(copyBtn && bkashNo){
+        copyBtn.addEventListener('click', async function(){
+          try{
+            await navigator.clipboard.writeText(bkashNo.textContent.trim());
+            if(copyMsg){ copyMsg.classList.add('show'); setTimeout(function(){ copyMsg.classList.remove('show'); }, 1500); }
+          }catch(e){
+            var sel = window.getSelection(); var range = document.createRange();
+            range.selectNodeContents(bkashNo); sel.removeAllRanges(); sel.addRange(range);
+          }
+        });
+      }
+    });
+  </script>
 </body>
 </html>

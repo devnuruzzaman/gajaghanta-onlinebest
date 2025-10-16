@@ -22,16 +22,102 @@
   <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    .hero{background:linear-gradient(135deg,#f8fafc 0%,#f1f5f9 100%)}
+    .hero-content{max-width:960px;margin:0 auto;text-align:center}
+    .hero-title{margin:0 0 8px;font-size:36px;font-weight:900;color:#0f172a}
+    .hero-subtitle{margin:0;color:#475569;font-size:16px}
+    .highlight{color:#e11d48}
+
+    .form-section{padding:40px 0;background:#ffffff}
+    .form-card{max-width:900px;margin:0 auto;padding:24px;border:1px solid var(--border);border-radius:16px;background:#fff;box-shadow:var(--shadow)}
+    .form-title{margin:0 0 16px;font-size:22px;font-weight:800;color:#0f172a}
+    .form-card form{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    .form-card .full{grid-column:1/-1}
+    .form-card input,.form-card select,.form-card textarea{width:100%;padding:12px 14px;border:1px solid #e2e8f0;border-radius:10px;background:#fff;color:#0f172a;font-size:14px;outline:none;transition:border .15s, box-shadow .15s}
+    .form-card input:focus,.form-card select:focus,.form-card textarea:focus{border-color:#0ea5e9;box-shadow:0 0 0 4px rgba(14,165,233,.12)}
+    .form-card button[type="submit"]{padding:12px 16px;border:0;border-radius:10px;background:#0f172a;color:#fff;font-weight:800;cursor:pointer}
+    .form-card button[type="submit"]:hover{background:#111827}
+    .form-hint{margin-top:10px;color:#475569}
+    @media(max-width:767px){.form-card form{grid-template-columns:1fr}}
+
+    .features{padding:40px 0 70px}
+    .features .section-title{text-align:center;margin-bottom:18px}
+    .features-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+    @media(max-width:991px){.features-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:575px){.features-grid{grid-template-columns:1fr}}
+    .feature-card{border:1px solid var(--border);border-radius:14px;padding:18px;background:#fff;text-align:center;box-shadow:var(--shadow)}
+    .feature-icon{font-size:28px}
+    .feature-card h3{margin:8px 0 6px;font-size:16px}
+    .muted{color:#64748b}
+  </style>
 </head>
 <body>
   <div id="site-header"></div>
+
+
   <main class="section">
-    <div class="container">
-      <h1 class="section-title">রেজিস্টার</h1>
-      <p class="section-sub">সেবাটি নিতে আপনার তথ্য দিন — আমরা দ্রুত যোগাযোগ করব।</p>
+  <section class="hero" style="min-height: 300px; padding: 60px 20px;">
+    <div class="hero-content">
+      <h2 class="hero-title">আজই <span class="highlight">গজঘণ্টা অনলাইন</span> এ যোগ দিন</h2>
+      <p class="hero-subtitle">এখনই রেজিস্টার করুন এবং অতি দ্রুত ইন্টারনেট অভিজ্ঞতা অর্জন করুন!</p>
     </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container">
+      <div class="form-card">
+        <h2 class="form-title">নতুন কানেকশন রেজিস্ট্রেশন ফর্ম</h2>
+        <form id="regForm" data-mode="A" data-apps-script="https://script.google.com/macros/s/AKfycbwiDsOs4qJE14sKdD09SdFecvsAmxHCvynuN2FTHYN3PyXP--d5F6d31vFUeyEQJsfg/exec" data-backend-url="">
+          <input type="text" name="FullName" placeholder="পূর্ণ নাম / Full Name *" required>
+          <input type="text" name="Phone" placeholder="ফোন নম্বর / Phone Number *" required>
+          <input type="email" name="Email" placeholder="ইমেইল / Email">
+          <input type="text" name="Address" placeholder="ঠিকানা / Address *" required>
+          
+          <select name="ConnectionType" required>
+            <option value="">কানেকশনের ধরণ নির্বাচন করুন *</option>
+            <option value="বাড়ীতে ব্যবহারের জন্য">বাড়ীতে ব্যবহারের জন্য</option>
+            <option value="অনলাইন কাজের জন্য">অনলাইন কাজের জন্য</option>
+            <option value="ফটোশপ দোকেনের জন্য">ফটোশপ দোকেনের জন্য</option>
+            <option value="দোকেনের জন্য">দোকেনের জন্য</option>
+            <option value="অনান্য">অনান্য</option>
+          </select>
+          
+          <select name="Package" required>
+            <option value="">প্যাকেজ নির্বাচন করুন *</option>
+            <option value="15 Mbps - 525tk">15 Mbps - ৳৫২৫/মাস</option>
+            <option value="30 Mbps - 600tk">30 Mbps - ৳৬০০/মাস</option>
+            <option value="45 Mbps - 630tk">45 Mbps - ৳৬৩০/মাস ⭐</option>
+            <option value="50 Mbps - 840tk">50 Mbps - ৳৮৪০/মাস</option>
+          </select>
+          
+          <input type="date" name="InstallDate" placeholder="পছন্দের ইনস্টলেশন তারিখ">
+          
+          <select name="RouterModel">
+            <option value="">রাউটার প্রয়োজন?</option>
+            <option value="Yes">হ্যাঁ (Yes)</option>
+            <option value="No">না (No)</option>
+          </select>
+          
+          <textarea class="full" name="Notes" placeholder="মন্তব্য / Remarks (Optional)" rows="3"></textarea>
+          
+          <div class="full" style="text-align: left; margin: 6px 0 2px;">
+            <label style="display: flex; align-items: center; gap: 8px; cursor: pointer;">
+              <input type="checkbox" id="terms" required style="width: auto; margin: 0;">
+              <span>আমি শর্তাবলীতে সম্মত।</span>
+            </label>
+          </div>
+          
+          <button type="submit">✅ সাবমিট করুন</button>
+        </form>
+        <p id="msg" class="form-hint">প্রয়োজনীয় ঘরগুলো পূরণ করে সাবমিট করুন।</p>
+      </div>
+    </div>
+  </section>
+
   </main>
-  <div id="site-footer"></div>
+
+<div id="site-footer"></div>
 
   <script>
   (async () => {
@@ -44,6 +130,70 @@
     await load('site-header', ['../assets/header/header.html','assets/header/header.html']);
     await load('site-footer', ['../assets/header/footer.html','assets/header/footer.html']);
   })();
+  </script>
+
+    <script>
+    (function(){
+      const form = document.getElementById('regForm');
+      const msg = document.getElementById('msg');
+      if (!form) return;
+      const required = ['FullName','Phone','Address','ConnectionType','Package'];
+      function showMsg(text, isError){
+        if (!msg) return;
+        msg.textContent = text;
+        msg.style.display = 'block';
+        msg.style.color = isError ? '#b91c1c' : '#166534';
+        msg.style.fontWeight = '700';
+        msg.style.marginTop = '8px';
+      }
+      async function submitOptionA(fd){
+        const url = (form.dataset.appsScript||'').trim();
+        if (!url) { showMsg('Apps Script URL দিন (data-apps-script)।', true); return; }
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+        try {
+          const body = new URLSearchParams();
+          fd.forEach((v,k)=>body.append(k,v));
+          await fetch(url, { method:'POST', mode:'no-cors', body });
+          showMsg('ধন্যবাদ! আপনার তথ্য গ্রহণ করা হয়েছে।', false);
+          form.reset();
+        } catch(e){
+          showMsg('সাবমিট করা যায়নি। পরে চেষ্টা করুন।', true);
+        } finally { if (btn) { btn.disabled = false; btn.textContent = '✅ সাবমিট করুন'; } }
+      }
+      async function submitOptionB(fd){
+        const url = (form.dataset.backendUrl||'').trim();
+        if (!url) { showMsg('Backend URL দিন (data-backend-url)।', true); return; }
+        const payload = Object.fromEntries(fd.entries());
+        const btn = form.querySelector('button[type="submit"]');
+        if (btn) { btn.disabled = true; btn.textContent = 'Submitting...'; }
+        try {
+          const res = await fetch(url, { method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(payload) });
+          if (!res.ok) throw new Error('bad status');
+          showMsg('ধন্যবাদ! আপনার তথ্য গ্রহণ করা হয়েছে।', false);
+          form.reset();
+        } catch(e){
+          showMsg('সাবমিট করা যায়নি। পরে চেষ্টা করুন।', true);
+        } finally { if (btn) { btn.disabled = false; btn.textContent = '✅ সাবমিট করুন'; } }
+      }
+      function submitOptionC(){
+        showMsg('ধন্যবাদ! আপনার তথ্য ডেমো মোডে গ্রহণ করা হয়েছে।', false);
+        form.reset();
+      }
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        const fd = new FormData(form);
+        for (const key of required){ if (!String(fd.get(key)||'').trim()){ showMsg('অনুগ্রহ করে সব প্রয়োজনীয় ঘর পূরণ করুন।', true); return; } }
+        const terms = document.getElementById('terms');
+        if (terms && !terms.checked){ showMsg('শর্তাবলীতে সম্মতি দিন।', true); return; }
+        const ph = String(fd.get('Phone')||'').replace(/[^0-9+]/g,'');
+        if (ph.length < 10){ showMsg('সঠিক ফোন নম্বর দিন।', true); return; }
+        const mode = (form.dataset.mode||'C').toUpperCase();
+        if (mode === 'A') return submitOptionA(fd);
+        if (mode === 'B') return submitOptionB(fd);
+        return submitOptionC();
+      });
+    })();
   </script>
   
   <!-- JS includes -->

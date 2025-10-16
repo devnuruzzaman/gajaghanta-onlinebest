@@ -15,6 +15,15 @@
         </div>
       </div>`;
     document.body.prepend(wrap);
+    // Prevent scrolling while preloader is visible
+    document.body.classList.add('preloading');
+    // Fail-safe: hide preloader automatically after 6s in case load never fires
+    if (!wrap.dataset._failsafe){
+      wrap.dataset._failsafe = '1';
+      setTimeout(() => {
+        if (wrap && wrap.style.display !== 'none') hidePreloader();
+      }, 6000);
+    }
   }
 })();
 
@@ -51,6 +60,24 @@ function initUI(){
   }
 }
 initUI();
+
+// SEO helpers: set canonical and og:url dynamically; lazy-load images
+(function enhanceSEO(){
+  try{
+    const url = window.location.href;
+    const canonicalEl = document.querySelector('link#canonical') || document.querySelector('link[rel="canonical"]');
+    if (canonicalEl) canonicalEl.setAttribute('href', url);
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    if (ogUrl) ogUrl.setAttribute('content', url);
+  }catch(_){}
+  try{
+    // Defer non-critical images
+    document.querySelectorAll('img:not([fetchpriority="high"])').forEach(img => {
+      if (!img.hasAttribute('loading')) img.setAttribute('loading','lazy');
+      if (!img.hasAttribute('decoding')) img.setAttribute('decoding','async');
+    });
+  }catch(_){}
+})();
 
 function initImageAnimations(){
   const imgs = Array.from(document.querySelectorAll('main img'));
@@ -212,11 +239,7 @@ if (waBtn) {
 
 // Preloader hide & back-to-top logic
 window.addEventListener('load', () => {
-  const loading = document.getElementById('loading');
-  if (loading) {
-    loading.style.opacity = '0';
-    setTimeout(() => loading.style.display = 'none', 300);
-  }
+  hidePreloader();
 });
 
 function wireBackToTop(){
@@ -239,4 +262,27 @@ function wireBackToTop(){
 
 // Try to wire once at startup as well
 wireBackToTop();
+
+// Shared hide function with smooth transition and motion preference
+function hidePreloader(){
+  const loading = document.getElementById('loading');
+  if (!loading) { document.body.classList.remove('preloading'); return; }
+  try{
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced){
+      loading.style.display = 'none';
+      document.body.classList.remove('preloading');
+      return;
+    }
+    loading.style.opacity = '0';
+    loading.style.transition = 'opacity .3s ease';
+    setTimeout(() => {
+      loading.style.display = 'none';
+      document.body.classList.remove('preloading');
+    }, 320);
+  }catch(_){
+    loading.style.display = 'none';
+    document.body.classList.remove('preloading');
+  }
+}
 

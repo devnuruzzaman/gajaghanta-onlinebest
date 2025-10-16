@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="../assets/css/animate.css" />
   <link rel="stylesheet" href="../assets/css/bootstrap.css" />
   <link rel="stylesheet" href="../assets/css/custom-animation.css">
-  <link rel="stylesheet" href="../assets/css/flaticon_broadx.css">
   <link rel="stylesheet" href="../assets/css/font-awesome-pro.css">
   <link rel="stylesheet" href="../assets/css/fa-local.css">
   <link rel="stylesheet" href="../assets/css/magnific-popup.css">
@@ -91,36 +90,42 @@
                <div class="col-xl-12">
                   <div class="tp-contact-form-border">
                      <h4 class="tp-contact-form-title">আপনার বার্তা প্রেরণ করুন</h4>
-                     <form method="post" action="phpmailer.html">
-                        <div class="row">
-                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
-                              <div class="tp-contact-form-input-box">
-                                 <input type="text" placeholder="আপনার নাম লিখুন">
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg- col-md-6 col-12 mb-20">
-                              <div class="tp-contact-form-input-box">
-                                 <input type="text" placeholder="আপনার ইমেইল লিখুন">
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
-                              <div class="tp-contact-form-input-box">
-                                 <input type="text" placeholder="আপনার সাইট লিখুন">
-                              </div>
-                           </div>
-                           <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
-                              <div class="tp-contact-form-input-box">
-                                 <input type="text" placeholder="আপনার বিষয় লিখুন">
-                              </div>
-                           </div>
-                           <div class="col-12 mb-20">
-                              <div class="tp-contact-form-input-box">
-                                 <textarea placeholder="আপনার বার্তা লিখুন"></textarea>
-                              </div>
-                           </div>
-                        </div>
-                     </form>
-                     <button type="submit" class="tp-btn theme-bg"><span>মেসেজ করুন</span></button>
+                   <form id="contact-form" method="POST" action="https://formspree.io/f/xanpapep">
+                      <input type="hidden" name="_redirect" value="../Contact/">
+                      <input type="hidden" name="_subject" value="New contact message — গজঘন্টা অনলাইন">
+                      <input type="hidden" name="_language" value="bn">
+                      <div class="row">
+                         <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                            <div class="tp-contact-form-input-box">
+                                <input type="text" name="name" placeholder="আপনার নাম লিখুন" required>
+                             </div>
+                          </div>
+                          <div class="col-xl-6 col-lg- col-md-6 col-12 mb-20">
+                             <div class="tp-contact-form-input-box">
+                                <input type="email" name="email" placeholder="আপনার ইমেইল লিখুন" required>
+                             </div>
+                          </div>
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                             <div class="tp-contact-form-input-box">
+                                <input type="text" name="website" placeholder="আপনার সাইট লিখুন">
+                             </div>
+                          </div>
+                          <div class="col-xl-6 col-lg-6 col-md-6 col-12 mb-20">
+                             <div class="tp-contact-form-input-box">
+                                <input type="text" name="subject" placeholder="আপনার বিষয় লিখুন">
+                             </div>
+                          </div>
+                          <div class="col-12 mb-20">
+                             <div class="tp-contact-form-input-box">
+                                <textarea name="message" placeholder="আপনার বার্তা লিখুন" required></textarea>
+                             </div>
+                          </div>
+                          <div class="col-12">
+                            <button type="submit" class="tp-btn theme-bg"><span>মেসেজ করুন</span></button>
+                            <div class="ajax-response" style="margin-top:10px;font-size:14px"></div>
+                          </div>
+                       </div>
+                    </form>
                   </div>  
                </div>
             </div>
@@ -155,10 +160,35 @@
     await load('site-footer', ['../assets/header/footer.html','assets/header/footer.html']);
   })();
   </script>
+  <script>
+  $(function(){
+    var form = $('#contact-form');
+    var formMessages = $('.ajax-response');
+    if (!form.length) return;
+    form.on('submit', function(e){
+      e.preventDefault();
+      var formData = form.serialize();
+      $.ajax({
+        type: 'POST',
+        url: form.attr('action'),
+        data: formData,
+        dataType: 'json'
+      })
+      .done(function(){
+        formMessages.removeClass('error').addClass('success').text('আপনার বার্তা সফলভাবে পাঠানো হয়েছে।');
+        form[0].reset();
+        // Stay on page; success message shown above
+        // Optionally scroll to top or clear fields handled already
+      })
+      .fail(function(xhr){
+        formMessages.removeClass('success').addClass('error').text(xhr.responseText || 'দুঃখিত, বার্তা পাঠানো যায়নি।');
+      });
+    });
+  });
+  </script>
   
   <!-- JS includes -->
   <script src="../assets/js/Script.js" defer></script>
-  <script data-cfasync="false" src="../assets/js/email-decode.min.js"></script>
   <script src="../assets/js/vendor/jquery.js" defer></script>
   <script src="../assets/js/bootstrap-bundle.js" defer></script>
   <script src="../assets/js/imagesloaded-pkgd.js" defer></script>
