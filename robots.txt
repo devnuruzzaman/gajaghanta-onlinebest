@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://devnuruzzaman.github.io/gajaghanta-onlinebest/sitemap.xml
