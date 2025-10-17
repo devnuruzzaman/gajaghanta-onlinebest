@@ -18,7 +18,7 @@
   <link rel="stylesheet" href="../assets/css/spacing.css">
   <link rel="stylesheet" href="../assets/css/swiper-bundle.css">
   <!-- Resource hints -->
-  <link rel="preload" as="image" href="../assets/img/slider/shape-3-1.png" fetchpriority="high">
+  <link rel="preload" as="image" href="../assets/img/logo/logo.png" fetchpriority="high">
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <style>
@@ -30,7 +30,42 @@
   </style>
 </head>
 <body>
-  <div id="site-header"></div>
+  <div class="header">
+    <div class="container">
+      <div class="nav">
+        <a href="../" class="brand" data-nav="home">
+          <img src="../assets/img/logo/logo.png" alt="গজঘন্টা অনলাইন" class="brand-logo" />
+          <div class="brand-text">
+            <div class="brand-name">গজঘন্টা অনলাইন</div>
+            <div class="brand-slogan">সুপার ফাস্ট ফাইবার ব্রডব্যান্ড</div>
+          </div>
+        </a>
+        <nav class="nav-links">
+          <a href="../" data-nav="home">হোম</a>
+          <a href="../About" data-nav="about">সম্পর্কে</a>
+          <a href="../Service" data-nav="service">সার্ভিস</a>
+          <a href="../Packages" data-nav="packages">প্যাকেজ</a>
+          <a href="../Payment" data-nav="payment">পেমেন্ট</a>
+          <a href="../Contact" data-nav="contact">যোগাযোগ</a>
+        </nav>
+        <div class="nav-cta">
+          <a href="../Packages" class="btn outline" data-nav="packages">প্যাকেজ দেখুন</a>
+          <a href="../Register" class="btn primary" data-nav="register">শুরু করুন</a>
+        </div>
+        <button id="menuBtn" class="menu-btn" aria-label="Toggle menu">≡</button>
+      </div>
+    </div>
+    <div id="mobileNav" class="mobile-nav">
+      <div class="container">
+        <a href="../" data-nav="home">হোম</a>
+        <a href="../About" data-nav="about">সম্পর্কে</a>
+        <a href="../Service" data-nav="service">সার্ভিস</a>
+        <a href="../Packages" data-nav="packages">প্যাকেজ</a>
+        <a href="../Payment" data-nav="payment">পেমেন্ট</a>
+        <a href="../Contact" data-nav="contact">যোগাযোগ</a>
+      </div>
+    </div>
+  </div>
 
    <main>
 
@@ -90,8 +125,7 @@
                <div class="col-xl-12">
                   <div class="tp-contact-form-border">
                      <h4 class="tp-contact-form-title">আপনার বার্তা প্রেরণ করুন</h4>
-                   <form id="contact-form" method="POST" action="https://formspree.io/f/xanpapep">
-                      <input type="hidden" name="_redirect" value="../Contact/">
+                   <form id="contact-form" method="POST" action="https://formspree.io/f/xanpapep" onsubmit="return false">
                       <input type="hidden" name="_subject" value="New contact message — গজঘন্টা অনলাইন">
                       <input type="hidden" name="_language" value="bn">
                       <div class="row">
@@ -144,47 +178,130 @@
 
    </main>
 
-
-
-  <div id="site-footer"></div>
-
+  <div class="footer">
+    <div class="container section tight">
+      <div class="foot-grid">
+        <div class="foot">
+          <div class="brand" style="text-align: left;">
+            <a href="../" class="brand">
+              <img src="../assets/img/logo/logo.png" alt="গজঘন্টা অনলাইন" class="brand-logo" />
+              <div class="brand-text">
+                <div class="brand-name">গজঘন্টা অনলাইন</div>
+                <div class="brand-slogan">সুপার ফাস্ট ফাইবার ব্রডব্যান্ড</div>
+              </div>
+            </a>
+          </div>
+          <p class="mt-3" style="font-size:14px;color:var(--text-2)">বিশ্বস্ত ফাইবার ইন্টারনেট হোম ও বিজনেসের জন্য।</p>
+          <div class="mt-4" style="display:flex;gap:8px;color:#475569;align-items:center">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span>গজঘণ্টা বাজার, গজঘণ্টা-৫৪১০, গংগাচড়া, রংপুর</span>
+          </div>
+          <div class="mt-2" style="display:flex;gap:8px;color:#475569;align-items:center">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+8801988084009">+৮৮০ ১৯৮৮ ০৮৪০০৯</a>
+          </div>
+          <div class="mt-2" style="display:flex;gap:8px;color:#475569;align-items:center">
+            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+            <a href="tel:+8809638268644">+৮৮০ ৯৬৩৮ ২৬৮৬৪৪</a>
+          </div>
+          <div class="mt-2" style="display:flex;gap:8px;color:#475569;align-items:center">
+            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+            <a href="mailto:gajaghantaonline@gmail.com">gajaghantaonline@gmail.com</a>
+          </div>
+        </div>
+        <div class="foot" style="text-align: center;">
+          <h4>কোম্পানি</h4>
+          <ul>
+            <li><a href="../About" data-nav="about">সম্পর্কে</a></li>
+            <li><a href="../Service" data-nav="service">সার্ভিস</a></li>
+            <li><a href="../Packages" data-nav="packages">প্যাকেজ</a></li>
+            <li><a href="../Payment" data-nav="payment">পেমেন্ট</a></li>
+            <li><a href="../Contact" data-nav="contact">যোগাযোগ</a></li>
+          </ul>
+        </div>
+        <div class="foot" style="text-align: center;">
+          <h4>লিগ্যাল</h4>
+          <ul>
+            <li><a href="#" data-nav="terms">টার্মস অফ সার্ভিস</a></li>
+            <li><a href="#" data-nav="privacy">প্রাইভেসি পলিসি</a></li>
+            <li><a href="#" data-nav="acceptable-use">অ্যাকসেপ্টেবল ইউজ</a></li>
+            <li><a href="#">অ্যাকসেপ্টেবল ইউজ</a></li>
+          </ul>
+        </div>
+        <div class="foot" style="text-align: center;">
+          <h4>নিউজলেটার</h4>
+          <p class="mt-3" style="font-size:14px;color:var(--text-2)">নতুন প্যাকেজ ও অফারের আপডেট পেতে সাবস্ক্রাইব করুন।</p>
+          <form id="newsForm" class="mt-4" style="display:flex;gap:8px" onsubmit="return false;">
+            <input required type="email" placeholder="আপনার ইমেইল দিন" />
+            <button class="btn" style="background:#0f172a;color:#fff">সাবস্ক্রাইব</button>
+          </form>
+        </div>
+      </div>
+      <div class="mt-8 footer-bottom">
+        <div class="fb-left">
+          <p style="color: white;">  <a href="../" style="color: rgb(221, 9, 9);">গজঘন্টা অনলাইন</a>. সর্বস্বত্ব সংরক্ষিত।</p>
+        </div>
+        <div class="fb-center">
+          <p style="color: white;">ভালবাসা দিয়ে তৈরি — দ্রুত গতির জন্য।</p>
+        </div>
+        <div id="developer" class="fb-right">
+          <p style="color: white;">ডিজাইনারঃ <a href="https://www.facebook.com/itznuruzzamanbd" style="color: rgb(221, 9, 9);">মোঃ নুরুজ্জামান</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button id="whatsapp" class="fab" aria-label="WhatsApp chat">হোয়াটসঅ্যাপ</button>
+  <div id="toast" class="toast" role="status" aria-live="polite" aria-atomic="true" style="transform:translateX(-50%) translateY(-6px)"></div>
+  <div id="successModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalDesc">
+    <div class="modal-card">
+      <h3 id="modalTitle">ধন্যবাদ!</h3>
+      <p id="modalDesc">আপনার বার্তা সফলভাবে পাঠানো হয়েছে।</p>
+      <div class="modal-actions">
+        <button type="button" id="modalOk" class="btn primary">ঠিক আছে</button>
+      </div>
+    </div>
+  </div>
   <script>
-  (async () => {
-    const load = async (mountId, paths) => {
-      const el = document.getElementById(mountId);
-      if (!el) return;
-      for (const p of paths) { try { const r = await fetch(p); if (r.ok) { el.innerHTML = await r.text(); return; } } catch(_){} }
-      console.warn('[partials] Unable to load', mountId, 'from', paths);
-    };
-    await load('site-header', ['../assets/header/header.html','assets/header/header.html']);
-    await load('site-footer', ['../assets/header/footer.html','assets/header/footer.html']);
-  })();
-  </script>
-  <script>
-  $(function(){
-    var form = $('#contact-form');
-    var formMessages = $('.ajax-response');
-    if (!form.length) return;
-    form.on('submit', function(e){
-      e.preventDefault();
-      var formData = form.serialize();
-      $.ajax({
-        type: 'POST',
-        url: form.attr('action'),
-        data: formData,
-        dataType: 'json'
-      })
-      .done(function(){
-        formMessages.removeClass('error').addClass('success').text('আপনার বার্তা সফলভাবে পাঠানো হয়েছে।');
-        form[0].reset();
-        // Stay on page; success message shown above
-        // Optionally scroll to top or clear fields handled already
-      })
-      .fail(function(xhr){
-        formMessages.removeClass('success').addClass('error').text(xhr.responseText || 'দুঃখিত, বার্তা পাঠানো যায়নি।');
+  (function(){
+    function qs(sel, root){ return (root||document).querySelector(sel); }
+    function showToast(text, type){
+      var t = qs('#toast');
+      if (!t) return;
+      t.classList.remove('success','error');
+      if (type) t.classList.add(type);
+      t.textContent = text || '';
+      t.classList.add('show');
+      setTimeout(function(){ t.classList.remove('show'); }, 2200);
+    }
+    function openModal(){ var m = qs('#successModal'); if(m) m.classList.add('show'); }
+    function closeModal(){ var m = qs('#successModal'); if(m) m.classList.remove('show'); }
+    document.addEventListener('DOMContentLoaded', function(){
+      var modal = qs('#successModal');
+      var modalOk = qs('#modalOk');
+      if (modalOk) modalOk.addEventListener('click', closeModal);
+      if (modal) modal.addEventListener('click', function(e){ if(e.target === modal) closeModal(); });
+
+      var form = qs('#contact-form');
+      var formMessages = qs('.ajax-response');
+      if (!form) return;
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        var fd = new FormData(form);
+        fetch(form.action, { method:'POST', headers:{ 'Accept':'application/json' }, body: fd })
+          .then(function(res){ if (!res.ok) throw new Error('bad status'); return res.json().catch(function(){return {ok:true}}); })
+          .then(function(){
+            if (formMessages){ formMessages.classList.remove('error'); formMessages.classList.add('success'); formMessages.textContent = 'আপনার বার্তা সফলভাবে পাঠানো হয়েছে।'; }
+            showToast('আপনার বার্তা সফলভাবে পাঠানো হয়েছে।','success');
+            openModal();
+            form.reset();
+          })
+          .catch(function(){
+            if (formMessages){ formMessages.classList.remove('success'); formMessages.classList.add('error'); formMessages.textContent = 'দুঃখিত, বার্তা পাঠানো যায়নি।'; }
+            showToast('দুঃখিত, বার্তা পাঠানো যায়নি।','error');
+          });
       });
     });
-  });
+  })();
   </script>
   
   <!-- JS includes -->
