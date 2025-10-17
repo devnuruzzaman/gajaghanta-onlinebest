@@ -153,6 +153,17 @@ input:focus,textarea:focus{outline:none;box-shadow:0 0 0 3px rgba(225,29,72,.15)
   .footer #newsForm button{width:100%}
 }
 
+/* Footer mobile layout improvements */
+@media (max-width:640px){
+  .footer .container.section.tight{padding:24px 16px}
+  .foot-grid{gap:16px}
+  .footer .foot{ text-align:center }
+  .footer .brand{ justify-content:center }
+  .footer .brand-text{ align-items:center }
+  .footer .brand-logo{ width:56px; height:56px }
+  .footer{ padding-bottom:72px }
+}
+
 /* Avoid overlap with floating whatsapp button (more reduced) */
 .footer{padding-bottom:12px}
 
